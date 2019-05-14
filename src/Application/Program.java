@@ -1,6 +1,7 @@
 package Application;
 
 import Entities.Account;
+import Entities.AccountLogin;
 import Services.AccountBasics;
 
 
@@ -32,11 +33,17 @@ public class Program {
             ab.writeAccount(account);
             System.out.println("Account created.");
         }
-        System.out.println("Log in your account to access data.");
+        System.out.println("Log into your account to access data.");
         System.out.print("Login: ");
+        scanner.nextLine();
         String login = scanner.nextLine();
         System.out.print("Password: ");
         String password = scanner.nextLine();
+        AccountLogin accountLogin = new AccountLogin(login,password);
+        AccountBasics ab = new AccountBasics(accountLogin, "C:\\temp\\out.txt");
+        ab.searchAccountData(accountLogin);
+
+
 
     }
 }

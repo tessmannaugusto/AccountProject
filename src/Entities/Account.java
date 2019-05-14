@@ -10,6 +10,11 @@ public class Account {
 
     private AccountBasics ab;
 
+    public Account(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
     public Account(String name, String email, String login, String password) {
         this.name = name;
         this.email = email;
