@@ -1,7 +1,6 @@
 package Application;
 
 import Entities.Account;
-import Entities.AccountLogin;
 import Services.AccountBasics;
 
 
@@ -39,9 +38,10 @@ public class Program {
         String login = scanner.nextLine();
         System.out.print("Password: ");
         String password = scanner.nextLine();
-        AccountLogin accountLogin = new AccountLogin(login,password);
+        Account accountLogin = new Account("notimportant", "notimportant", login,password);
         AccountBasics ab = new AccountBasics(accountLogin, "C:\\temp\\out.txt");
         ab.searchAccountData(accountLogin);
+        System.out.println();
 
 
 
